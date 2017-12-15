@@ -41,3 +41,9 @@ The application was built on python using PJSUA library. Asterisk Server was use
 In this project we developed a smart shop prototype, which featured automatic collection of the items from the racks and multiple customer handling in the shortest possible time. The customer has to upload the shopping list into the system using console, after that our system would collect the items in shortest possible time. The system was controlled by ATmega 32 microcontroller and the program for it was written in C programming language. Moreover, the User Interface was written in Python.
 <br><br>
 
+## 7). Simulation of MIPS Processor on FPGA
+**Members : [Shreyas Patel](https://github.com/shreyaspatel25), [Maunil Vyas](https://github.com/Maunil), Deep C. Patel**<br>
+**Course : Computer Organisation**<br>
+In this project, we simulated MIPS processor in FPGA using Xilinx Framework
+<br><br>
+
