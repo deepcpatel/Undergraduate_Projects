@@ -44,6 +44,6 @@ In this project we developed a smart shop prototype, which featured automatic co
 ## 7). Simulation of MIPS Processor on FPGA
 **Members : [Shreyas Patel](https://github.com/shreyaspatel25), [Maunil Vyas](https://github.com/Maunil), Deep C. Patel**<br>
 **Course : Computer Organisation**<br>
-In this project, we simulated MIPS processor in FPGA using Xilinx Framework
+In this project, we simulated MIPS processor on FPGA using Xilinx Framework
 <br><br>
 
