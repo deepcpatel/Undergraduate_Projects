@@ -16,7 +16,7 @@ In this project we tried to reproduce the paper titled ["A nonparametric approac
 <br><br>
 
 ## 3). Analysis of Traditional CPU Scheduling Algorithms and Real Time CPU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scheduling Algorithms
-**Members : [Maunil Vyas](https://github.com/Maunil), Deep C. Patel, [Shreyas Patel](https://github.com/shreyaspatel25), Karan Patel**<br>
+**Members : [Shreyas Patel](https://github.com/shreyaspatel25), Deep C. Patel, [Maunil Vyas](https://github.com/Maunil), Karan Patel**<br>
 **Course : Operating Systems**<br>
 In this project we have done analysis on the Traditional CPU Scheduling algorithms like First Come First Serve(FCFS), Shortest
 Remaining Next(SRN), Round Robin(RR), Priority Scheduling(PS) as well as Real Time CPU Scheduling Algorithms like Rate Monotonic Scheduling(RMS) and Earliest Deadline First(EDF) algorithms. We analyzed and compared characteristics like Average Waiting Time, Average Turnaround Time, Throughput and Percentage of Deadlines Missed.
