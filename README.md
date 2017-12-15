@@ -7,7 +7,7 @@ The usual electronic synthesisers use 12 notes in an octave. However, Indian cla
 (In Indian classical music, Shruti is the jargon for a musical note)
 <br><br>
 **Progress :** Till now, we have successfully implemented a software version of the synthesiser on Scilab and in Python. We have created two versions of the synthesiser. The first version synthesises the frequencies using re-sampling of the recorded sound note, and in the second version, we synthesised frequencies using additive synthesis. We analysed primary frequency components of the instrument tone using Fourier Transform and added their harmonics to synthesise various frequencies. However, the sound quality is not reasonable for musicians, and that is why we are seeking an alternative approach to synthesis perfect sound using Autoencoders and other Deep learning techniques. Apart from this, we are also working to create a standalone synthesiser using RaspberryPi and MIDI Keyboard.
-<br><br><br>
+<br><br>
 
 ## 2). Implementation of Bootstrap Spectrum Sensing Scheme
 **Members : Maunil Vyas, Deep C. Patel, Shreyas Patel**<br>
