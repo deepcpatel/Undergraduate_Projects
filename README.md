@@ -53,3 +53,14 @@ In this project, we simulated MIPS processor on FPGA using Xilinx Framework.
 In this project, we tried to synthesis the Harmonium notes using various Digital Signal Processing Techniques.
 <br><br>
 
+## 9). Designing of E-Commerce company database
+**Members : [Shreyas Patel](https://github.com/shreyaspatel25), Deep C. Patel, [Maunil Vyas](https://github.com/Maunil), Jay Dangar, Rajat Barot**<br>
+**Course : Database Management Systems**<br>
+Here, we designed the database for the E-Commerce scenario on online booking of services such as household maintenance, cook, caretaker, mechanic etc. Various database design concepts were used in this project.
+<br><br>
+
+## 10). Design and Development of College Management Portal in Java
+**Members : Deep C. Patel, [Maunil Vyas](https://github.com/Maunil)**<br>
+**Course : Object Oriented Programming**<br>
+Designed and developed the prototype of college management portal capable of file sharing, messaging, notifications, live chat, timed online exams, calendar, profile viewing of a college person, sending important notice and record keeping. The project was built in Java, utilizing various Object Oriented Programming concepts and featuring Command Line Interface. 
+<br><br>
