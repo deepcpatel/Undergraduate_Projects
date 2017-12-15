@@ -1,9 +1,14 @@
 # My Undergraduate Projects
 
 ## 1). 22 Shrutis Synthesizer
-**Members : Deep C. Patel, Maunil Vyas, Shreyas Patel, Prof. Ashok Ranade**<br>
-The electronic synthesizers in the market are capable of generating 12 notes per octave. But the Indian Classical music identifies 22 notes('Shrutis') per octave. Thus, absence of the electronic synthesizers in the market having this capability motivated us to start this project. Currently we have developed a prototype version using Python. We have created 2 versions of the synthesizer, one version synthesizes the frequencies using re-sampling of the recorded Harmonium note. In the second version, we synthesized frequencies using additive synthesis. We analyzed main frequency components of the harmonium tone using Fourier Transform, and added their harmonics to synthesize various frequencies. Now, we are planning to make standalone synthesizer using RaspberryPi and MIDI Keyboard. Our future task is to improve the sound quality using generative models.
+**Members : Deep C. Patel, [Maunil Vyas](https://github.com/Maunil), [Shreyas Patel](https://github.com/shreyaspatel25), Prof. Ashok Ranade**<br>
+**Motivation :**
+The usual electronic synthesisers use 12 notes in an octave. However, Indian classical musicians are fastidious about minor frequency variations, and therefore prefer "22 Shruti (Notes)" in an octave. Thus, in most cases, musicians have to take support from an external entity to tune their instruments as there is an absence of such electronic synthesisers in the market. With this in a view, an initiative is taken to build a "22 Shruti Synthesizers", having a capability of generating 22 Notes. 
+(In Indian classical music, Shruti is the jargon for a musical note)
 <br><br>
+**Progress :** Till now, we have successfully implemented a software version of the synthesiser on Scilab and in Python. We have created two versions of the synthesiser. The first version synthesises the frequencies using re-sampling of the recorded sound note, and in the second version, we synthesised frequencies using additive synthesis. We analysed primary frequency components of the instrument tone using Fourier Transform and added their harmonics to synthesise various frequencies. However, the sound quality is not reasonable for musicians, and that is why we are seeking an alternative approach to synthesis perfect sound using Autoencoders and other Deep learning techniques. Apart from this, we are also working to create a standalone synthesiser using RaspberryPi and MIDI Keyboard.
+<br><br><br>
+
 ## 2). Implementation of Bootstrap Spectrum Sensing Scheme
 **Members : Maunil Vyas, Deep C. Patel, Shreyas Patel**<br>
 **Course : Wireless Communications**<br>
