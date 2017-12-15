@@ -10,19 +10,19 @@ The usual electronic synthesisers use 12 notes in an octave. However, Indian cla
 <br><br>
 
 ## 2). Implementation of Bootstrap Spectrum Sensing Scheme
-**Members : Maunil Vyas, Deep C. Patel, Shreyas Patel**<br>
+**Members : [Maunil Vyas](https://github.com/Maunil), Deep C. Patel, [Shreyas Patel](https://github.com/shreyaspatel25)**<br>
 **Course : Wireless Communications**<br>
 In this project we tried to reproduce the paper titled ["A nonparametric approach for spectrum sensing using bootstrap techniques"](http://ieeexplore.ieee.org/document/7036915/).
 <br><br>
 
 ## 3). Analysis of Traditional CPU Scheduling Algorithms and Real Time CPU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scheduling Algorithms
-**Members : Maunil Vyas, Deep C. Patel, Shreyas Patel, Karan Patel**<br>
+**Members : [Maunil Vyas](https://github.com/Maunil), Deep C. Patel, [Shreyas Patel](https://github.com/shreyaspatel25), Karan Patel**<br>
 **Course : Operating Systems**<br>
 In this project we have done analysis on the Traditional CPU Scheduling algorithms like First Come First Serve(FCFS), Shortest
 Remaining Next(SRN), Round Robin(RR), Priority Scheduling(PS) as well as Real Time CPU Scheduling Algorithms like Rate Monotonic Scheduling(RMS) and Earliest Deadline First(EDF) algorithms. We analyzed and compared characteristics like Average Waiting Time, Average Turnaround Time, Throughput and Percentage of Deadlines Missed.
 <br><br>
 ## 4). Delta Search Machine : Desktop File Search Engine
-**Members : Deep C. Patel, Maunil Vyas, Shreyas Patel, Jay Dangar**<br>
+**Members : Deep C. Patel, [Maunil Vyas](https://github.com/Maunil), [Shreyas Patel](https://github.com/shreyaspatel25), Jay Dangar**<br>
 **Course : Data Structures and Algorithms**<br>
 We made a desktop file searching using Java. We perform serch on the index of the files in the Desktop. For the indexing task, we utilized inverted index. Our Searching engine features GUI, Search History, Recommendations and Spell Corrections.
 <br><br>
