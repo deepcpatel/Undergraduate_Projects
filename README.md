@@ -35,3 +35,9 @@ Made a soft phone application. It features voice calling and conference calling 
 The application was built on python using PJSUA library. Asterisk Server was used to manage the clients.
 <br><br>
 
+## 6). Smart Shop Prototype
+**Members : Deep C. Patel, [Maunil Vyas](https://github.com/Maunil), [Shreyas Patel](https://github.com/shreyaspatel25)**<br>
+**Course : Embedded System Design**<br>
+In this project we developed a smart shop prototype, which featured automatic collection of the items from the racks and multiple customer handling in the shortest possible time. The customer has to upload the shopping list into the system using console, after that our system would collect the items in shortest possible time. The system was controlled by ATmega 32 microcontroller and the program for it was written in C programming language. Moreover, the User Interface was written in Python.
+<br><br>
+
