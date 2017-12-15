@@ -24,6 +24,6 @@ Remaining Next(SRN), Round Robin(RR), Priority Scheduling(PS) as well as Real Ti
 ## 4). Delta Search Machine : Desktop File Search Engine
 **Members : Deep C. Patel, [Maunil Vyas](https://github.com/Maunil), [Shreyas Patel](https://github.com/shreyaspatel25), Jay Dangar**<br>
 **Course : Data Structures and Algorithms**<br>
-We made a desktop file searching using Java. We perform serch on the index of the files in the Desktop. For the indexing task, we utilized inverted index. Our Searching engine features GUI, Search History, Recommendations and Spell Corrections.
+We made a desktop file searching using Java. We perform serch on the index of the files in the Desktop. For the indexing task, we utilized [inverted index](https://en.wikipedia.org/wiki/Inverted_index) data structure. Our Searching engine features GUI, Search History, Recommendations and Spell Corrections.
 <br><br>
 
