@@ -47,3 +47,9 @@ In this project we developed a smart shop prototype, which featured automatic co
 In this project, we simulated MIPS processor on FPGA using Xilinx Framework.
 <br><br>
 
+## 8). Synthesis of Harmonium Sound using various DSP techniques
+**Members : Deep C. Patel, [Maunil Vyas](https://github.com/Maunil), [Shreyas Patel](https://github.com/shreyaspatel25)**<br>
+**Course : Digital Signal Processing**<br>
+In this project, we tried to synthesis the Harmonium notes using various Digital Signal Processing Techniques.
+<br><br>
+
