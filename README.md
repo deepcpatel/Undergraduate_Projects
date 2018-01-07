@@ -3,10 +3,10 @@
 ## 1). 22 Shrutis Synthesizer [[Link]](https://github.com/deepcpatel/Undergraduate_Projects/tree/master/22_Shruti_Synthesizer)
 **Members : Deep C. Patel, [Maunil Vyas](https://github.com/Maunil), [Shreyas Patel](https://github.com/shreyaspatel25), Prof. Ashok Ranade**<br>
 **Motivation :**
-The usual electronic synthesisers use 12 notes in an octave. However, Indian classical musicians are fastidious about minor frequency variations, and therefore prefer "22 Shruti (Notes)" in an octave. Thus, in most cases, musicians have to take support from an external entity to tune their instruments as there is an absence of such electronic synthesisers in the market. With this in a view, an initiative is taken to build a "22 Shruti Synthesizers", having a capability of generating 22 Notes. 
+The usual electronic synthesizers use 12 notes in an octave. However, Indian classical musicians are fastidious about minor frequency variations, and therefore prefer "22 Shruti (Notes)" in an octave. Thus, in most cases, musicians have to take support from an external entity to tune their instruments as there is an absence of such electronic synthesizers in the market. With this in a view, an initiative is taken to build a "22 Shruti Synthesizers", having a capability of generating 22 Notes.
 (In the Indian Classical Music, Shruti is a jargon for the musical note)
 <br><br>
-**Progress :** Till now, we have successfully implemented a software version of the synthesiser on Scilab and in Python. We have created two versions of the synthesiser. The first version synthesises the frequencies using re-sampling of the recorded sound note, and in the second version, we synthesised frequencies using additive synthesis. We analysed primary frequency components of the instrument tone using Fourier Transform and added their harmonics to synthesise various frequencies. However, the sound quality is not reasonable for musicians, and that is why we are seeking an alternative approach to synthesis perfect sound using Autoencoders and other Deep learning techniques. Apart from this, we are also working to create a standalone synthesiser using RaspberryPi and MIDI Keyboard.
+**Progress :** Till now, we have successfully implemented a software version of the synthesizer on Scilab and in Python. We have created two versions of the synthesizer. The first version synthesizes the frequencies using re-sampling of the recorded sound note, and in the second version, we synthesized frequencies using additive synthesis. We analyzed primary frequency components of the instrument tone using Fourier Transform and added their harmonics along with proper envelope to synthesize various frequencies. However, the sound quality is not reasonable for professional musicians, and hence, we are looking for an alternative approach to synthesize musical instrument sounds of better quality using Generative models like [NSynth](https://magenta.tensorflow.org/nsynth). Apart from this, we are also working to create a standalone synthesizer using RaspberryPi and MIDI Keyboard.
 <br><br>
 
 ## 2). Implementation of Bootstrap Spectrum Sensing Scheme [[Link]](https://github.com/deepcpatel/Undergraduate_Projects/tree/master/Bootstrap_Spectrum_Sensing_Scheme)
@@ -31,14 +31,14 @@ We made a desktop file searching using Java. We perform serch on the index of th
 ## 5). Voice Calling system based on Voice Over Internet Protocol [[Link]](https://github.com/deepcpatel/Undergraduate_Projects/tree/master/VOIP_Phone)
 **Members : [Maunil Vyas](https://github.com/Maunil), Deep C. Patel, [Shreyas Patel](https://github.com/shreyaspatel25), [Mihir Gajjar](https://github.com/GajjarMihir)**<br>
 **Course : Computer Networks**<br>
-Made a soft phone application. It features voice calling and conference calling facility with reasonable audio quality. 
+Made a soft phone application. It features voice calling and conference calling facility with reasonable audio quality.
 The application was built on python using PJSUA library. Asterisk Server was used to manage the clients.
 <br><br>
 
 ## 6). Smart Shop Prototype [[Link]](https://github.com/deepcpatel/Undergraduate_Projects/tree/master/Smart_Shop_Embedded_System)
 **Members : Deep C. Patel, [Maunil Vyas](https://github.com/Maunil), [Shreyas Patel](https://github.com/shreyaspatel25)**<br>
 **Course : Embedded System Design**<br>
-In this project we developed a smart shop prototype, which featured automatic collection of the items from the racks and multiple customer handling in the shortest possible time. The customer has to upload the shopping list into the system using console, after that our system would collect the items in shortest possible time. The system was controlled by ATmega 32 microcontroller and the program for it was written in C programming language. Moreover, the User Interface was written in Python.
+In this project we developed a smart shop prototype, which featured automatic collection of the items from the racks and multiple customer handling in the shortest possible time. The customer has to upload the shopping list into the system using console, after that our system would collect the items in shortest possible time. The system was controlled by ATmega 32 micro-controller and the program for it was written in C programming language. Moreover, the User Interface was written in Python.
 <br><br>
 
 ## 7). Simulation of MIPS Processor on FPGA [[Link]](https://github.com/deepcpatel/Undergraduate_Projects/tree/master/MIPS_Processor_FPGA)
@@ -62,5 +62,5 @@ Here, we designed the database for the E-Commerce scenario on online booking of 
 ## 10). Design and Development of College Management Portal in Java [[Link]](https://github.com/deepcpatel/Undergraduate_Projects/tree/master/University_Management_Portal)
 **Members : Deep C. Patel, [Maunil Vyas](https://github.com/Maunil)**<br>
 **Course : Object Oriented Programming**<br>
-Designed and developed the prototype of college management portal capable of file sharing, messaging, notifications, live chat, timed online exams, calendar, profile viewing of a college person, sending important notice and record keeping. The project was built in Java, utilizing various Object Oriented Programming concepts and featuring Command Line Interface. 
+Designed and developed the prototype of college management portal capable of file sharing, messaging, notifications, live chat, timed online exams, calendar, profile viewing of a college person, sending important notice and record keeping. The project was built in Java, utilizing various Object Oriented Programming concepts and featuring Command Line Interface.
 <br><br>
