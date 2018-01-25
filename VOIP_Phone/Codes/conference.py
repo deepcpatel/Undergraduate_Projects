@@ -1,5 +1,5 @@
 #VOIP 
-#Conforence Calling group no 15 
+#Conference Calling group no 15 
 
 import sys
 import pjsua as pj
@@ -92,33 +92,33 @@ class MyAccountCallback(pj.AccountCallback):
     # Notification on incoming call
     def on_incoming_call(self, call):
         global current_call   
- 	global flag1
+        global flag1
 
- 	#When First caller is activated  
-	if (flag1==0):	
-		print "Incoming call from ", call.info().remote_uri
-		print "Press 'a' to answer"
-		current_call = call
-		#Start ringing 
-		_start_call_sound_in()
-		call_cb = MyCallCallback(current_call)
-		current_call.set_callback(call_cb)
-		#Here 180 indicates that call has been established at remote side but yet the remote person has not responded it  
-		current_call.answer(180)
-		flag1 = 1
-	
-	#This is for conference call 
-	else :
-		print "Incoming call from ", call.info().remote_uri
-		print "Press 'a' to answer"
-		current_call = call
-		call_cb = MyCallCallback(current_call)
-		current_call.set_callback(call_cb)
-		current_call.answer(180)
-		
+         #When First caller is activated  
+        if (flag1==0):    
+            print "Incoming call from ", call.info().remote_uri
+            print "Press 'a' to answer"
+            current_call = call
+            #Start ringing 
+            _start_call_sound_in()
+            call_cb = MyCallCallback(current_call)
+            current_call.set_callback(call_cb)
+            #Here 180 indicates that call has been established at remote side but yet the remote person has not responded it  
+            current_call.answer(180)
+            flag1 = 1
+        
+        #This is for conference call 
+        else :
+            print "Incoming call from ", call.info().remote_uri
+            print "Press 'a' to answer"
+            current_call = call
+            call_cb = MyCallCallback(current_call)
+            current_call.set_callback(call_cb)
+            current_call.answer(180)
+        
 
     def wait(self):
-    	#This basically handles the concurrency 
+        #This basically handles the concurrency 
         self.sem = threading.Semaphore(0)
         self.sem.acquire()
 
@@ -141,41 +141,42 @@ class MyCallCallback(pj.CallCallback):
         print "is", self.call.info().state_text,
         print "last code =", self.call.info().last_code, 
         print "(" + self.call.info().last_reason + ")"
-       	if ((self.call.info().last_reason=="Busy Here") | (self.call.info().last_reason=="Request Terminated")):
-       		_stop_call_sound()
 
-       		
+        if ((self.call.info().last_reason=="Busy Here") | (self.call.info().last_reason=="Request Terminated")):
+            _stop_call_sound()
+
+               
         if self.call.info().state == pj.CallState.DISCONNECTED:
             current_call = None
             print 'Current call is', current_call
-	
+    
     # Notification when call's media state has changed.
     def on_media_state(self):
-	
+    
         if self.call.info().media_state == pj.MediaState.ACTIVE:
-	    global counter 
-	    global A
-	    #This will stop the ring tone 
-	    _stop_call_sound()
-	    #This function will get the call slot information of remote person 
+            global counter 
+            global A
+            #This will stop the ring tone 
+            _stop_call_sound()
+            #This function will get the call slot information of remote person 
             call_slot = self.call.info().conf_slot
             #This conf_connect function indicate the connection like bridge between 
             #call slot (Remote person)and 0 is by default which indicates the sound devices.
             pj.Lib.instance().conf_connect(call_slot, 0)
             pj.Lib.instance().conf_connect(0, call_slot)
             print "Media is now active"
-	    
-	    #The below mechanism is for conference call 
+        
+            #The below mechanism is for conference call 
             if(counter>0):
-		 #To make a bridge between all those active conference member we need to connect all their slots.
-		 #so the below mechanism does that
-		 i=0
-	   	 for i in range(counter):
-			pj.Lib.instance().conf_connect(call_slot, A[i])
-            		pj.Lib.instance().conf_connect(A[i],call_slot)
-	            	      	 	
-	    A.append(call_slot) 
-	    counter=counter+1; 		
+                #To make a bridge between all those active conference member we need to connect all their slots.
+                #so the below mechanism does that
+                i=0
+                for i in range(counter):
+                    pj.Lib.instance().conf_connect(call_slot, A[i])
+                    pj.Lib.instance().conf_connect(A[i],call_slot)
+                                           
+                A.append(call_slot) 
+                counter=counter+1;         
 
         else:
             print "Media is inactive"
@@ -185,7 +186,7 @@ class MyCallCallback(pj.CallCallback):
 
 def make_call(uri):
     try:
-    	#Here Uri is given by the Asterisk Server 
+        #Here Uri is given by the Asterisk Server 
         print "Making call to", uri
         _start_call_sound_out()
         return acc.make_call(uri, cb=MyCallCallback())
@@ -210,7 +211,7 @@ try:
     print "-------------------------"
     print "Welcome into VOIP Service"
     print "-------------------------"
-   	
+       
     # Create local account for the Asterisk Server
     ip_var = raw_input("Please Enter Asterisk Server IP:>")
     #User name and Password
@@ -223,8 +224,6 @@ try:
     acc.set_callback(acc_cb)
     acc_cb.wait()
     
-    	 
-  	   
     print "\n"
     print "Registration complete, status=", acc.info().reg_status, \
             "(" + acc.info().reg_reason + ")"
@@ -254,13 +253,13 @@ try:
             if input == "":
                 continue
             #session will lock this process 
-	    lck = lib.auto_lock()
+            lck = lib.auto_lock()
             #Here what ever the name user has entered for calling will automatically converted into his sip based URI by applying the 
             #below string mechanism
             current_call = make_call("sip:"+str(input)+"@"+str(ip_var))
             #After this it will unlock the process   
-	    del lck
-        	
+            del lck
+            
         #For hang up
         elif input == "h":
             _stop_call_sound()
