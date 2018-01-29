@@ -12,7 +12,7 @@ def Generate_Linespace(x1,x2,t):
 
 def Generate_Time_Vector(t):
 
-   ln = np.linspace(0, t, 22050*t)
+   ln = np.linspace(0, t, 2*22050*t)
 
    return ln
 
@@ -35,18 +35,20 @@ def Generate_Sound(f,s,n,d):
     p4 = 1+(12.5/100)
 
     # Saptak Selection
+    if s==0:
+        f = f/4 # Super Mandra
 
-    if s==1:
-        f = f/2
+    elif s==1:
+        f = f/2 # Mandra
 
     elif s==2:
-        f = f
+        f = f   # Madhayam
 
     elif s==3:
-        f = 2*f
+        f = 2*f # Taar
 
     else:
-        f = 4*f
+        f = 4*f # Super Taar
 
     R2 = f*p4
     G2 = R2*p4
@@ -55,7 +57,7 @@ def Generate_Sound(f,s,n,d):
 
     # Note/Shrutis Selection
 
-    if n == 1:  
+    if n == 1:
         f1 = f
     elif n == 2:
         f1 = f*p1
@@ -104,7 +106,7 @@ def Generate_Sound(f,s,n,d):
         d = 1000/f1    # d = -1 generates only 1000 cycle of the note
                        # Thus, now we need to loop that cycle for certain iterations to play note
                        # Use : To achieve better control over playing when key is pressed
-    T = np.ceil(22050 * d); # Time Period
+    T = np.ceil(2*22050 * d); # Time Period
 
     T1 = np.ceil(0.26 * T); # for linspace - Attack
     T2 = np.ceil(0.10 * T); # for linspace - Decay
@@ -147,7 +149,7 @@ def Generate_Sound(f,s,n,d):
        a = a[0:len(final_tone)]
 
     final_tone = np.multiply(final_tone,a)
-    
+
     final_tone = max_sample*final_tone # Normalizing for converting int16 from float 32 in future
 
     f = open('temp.txt', 'w')

@@ -31,94 +31,73 @@ def play_loops(sound, duration, lo):
     pygame.time.delay(duration)
     sound.stop()
 
-def defaultNoteGeneration(Frequency,Saptak):
+def defaultNoteGeneration():
+
+    Frequency = 261.3   # Frequency of Middle C (C4) / Safed 1
+    Saptak = 0          # Super Mandra Saptak
+
+    NUM_SEC = -1        # NUM_SEC = -1 generates only 1000 cycle of the note OR NUM_SEC = t generates t seconds of note
+    ab = {}
+    ind1 = {}
+    ind2 = {}
+    mp = {}
+
+    counter = 0
+
+    mp[0] = 1
+    mp[1] = 3
+    mp[2] = 4
+    mp[3] = 7
+    mp[4] = 8
+    mp[5] = 10
+    mp[6] = 12
+    mp[7] = 14
+    mp[8] = 16
+    mp[9] = 17
+    mp[10] = 20
+    mp[11] = 21
+
+    while Saptak != 4:
+
+        # print str(counter) + "," + str(mp[(counter)%12]) + "," + str(counter%12) + "," + str(Saptak)
+
+        ab[counter] = [env.Generate_Sound(Frequency,Saptak,mp[counter%12],NUM_SEC)]
+        f = open('temp.txt','r')
+        ind1[counter] = int(f.next())
+        ind2[counter] = int(f.next())
+        f.close()
+
+        counter = counter + 1
+
+        if counter%12 == 0:
+            Saptak  = Saptak + 1
+    
+    # Mapping externally the last Sa of last Octave     
+    
+    ab[counter] = [env.Generate_Sound(Frequency,Saptak,mp[counter%12],NUM_SEC)]
+    f = open('temp.txt','r')
+    ind1[counter] = int(f.next())
+    ind2[counter] = int(f.next())
+    f.close()
+
+    return (ab, ind1, ind2)
+
+def dynamicNoteGeneration():
+
+    Frequency = 261.63 # Frequency of Middle C (C4) / Safed 1
+    Saptak = 0 # Super Mandra Saptak
 
     NUM_SEC = -1  # NUM_SEC = -1 generates only 1000 cycle of the note OR NUM_SEC = t generates t seconds of note
     ab = {}
     ind1 = {}
     ind2 = {}
+    mp = {}
 
-    ab[0] = [env.Generate_Sound(Frequency,Saptak,1,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[0] = int(f.next())
-    ind2[0] = int(f.next())
-    f.close()
-    ab[1] = [env.Generate_Sound(Frequency,Saptak,2,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[1] = int(f.next())
-    ind2[1] = int(f.next())
-    f.close()
-    ab[2] = [env.Generate_Sound(Frequency,Saptak,4,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[2] = int(f.next())
-    ind2[2] = int(f.next())
-    f.close()
-    ab[3] = [env.Generate_Sound(Frequency,Saptak,6,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[3] = int(f.next())
-    ind2[3] = int(f.next())
-    f.close()
-    ab[4] = [env.Generate_Sound(Frequency,Saptak,8,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[4] = int(f.next())
-    ind2[4] = int(f.next())
-    f.close()
-    ab[5] = [env.Generate_Sound(Frequency,Saptak,10,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[5] = int(f.next())
-    ind2[5] = int(f.next())
-    f.close()
-    ab[6] = [env.Generate_Sound(Frequency,Saptak,12,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[6] = int(f.next())
-    ind2[6] = int(f.next())
-    f.close()
-    ab[7] = [env.Generate_Sound(Frequency,Saptak,14,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[7] = int(f.next())
-    ind2[7] = int(f.next())
-    f.close()
-    ab[8] = [env.Generate_Sound(Frequency,Saptak,15,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[8] = int(f.next())
-    ind2[8] = int(f.next())
-    f.close()
-    ab[9] = [env.Generate_Sound(Frequency,Saptak,17,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[9] = int(f.next())
-    ind2[9] = int(f.next())
-    f.close()
-    ab[10] = [env.Generate_Sound(Frequency,Saptak,19,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[10] = int(f.next())
-    ind2[10] = int(f.next())
-    f.close()
-    ab[11] = [env.Generate_Sound(Frequency,Saptak,21,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[11] = int(f.next())
-    ind2[11] = int(f.next())
-    f.close()
-    ab[12] = [env.Generate_Sound(Frequency,Saptak+1,1,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[12] = int(f.next())
-    ind2[12] = int(f.next())
-    f.close()
-
-    return (ab, ind1, ind2)
-
-def dynamicNoteGeneration(Frequency,Saptak):
-
-    NUM_SEC = -1    # NUM_SEC = -1 generates only 1000 cycle of the note OR NUM_SEC = t generates t seconds of note
-    ab = {}
-    ind1 = {}
-    ind2 = {}
+    counter = 0
 
     # --------------------------Sa--------------------------------
 
-    ab[0] = [env.Generate_Sound(Frequency,Saptak,1,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[0] = int(f.next())
-    ind2[0] = int(f.next())
+    mp[0] = 1
 
     # --------------------------ReA-------------------------------
 
@@ -127,10 +106,7 @@ def dynamicNoteGeneration(Frequency,Saptak):
     print "2).Komal"
     selection = int(raw_input('Select:-'))
 
-    ab[1] = [env.Generate_Sound(Frequency,Saptak,1+selection,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[1] = int(f.next())
-    ind2[1] = int(f.next())
+    mp[1] = 1+selection
 
     #---------------------------ReS--------------------------------
 
@@ -139,10 +115,7 @@ def dynamicNoteGeneration(Frequency,Saptak):
     print "2).Teevra"
     selection = int(raw_input('Select:-'))
 
-    ab[2] = [env.Generate_Sound(Frequency,Saptak,3+selection,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[2] = int(f.next())
-    ind2[2] = int(f.next())
+    mp[2] = 3+selection
 
     #-----------------------------GaA---------------------------------
 
@@ -151,10 +124,8 @@ def dynamicNoteGeneration(Frequency,Saptak):
     print "2).Komal"
     selection = int(raw_input('Select:-'))
 
-    ab[3] = [env.Generate_Sound(Frequency,Saptak,5+selection,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[3] = int(f.next())
-    ind2[3] = int(f.next())
+    mp[3] = 5+selection
+
     #-----------------------------GaS----------------------------------
 
     print "\nChoose Shuddh Ga:-"
@@ -162,41 +133,29 @@ def dynamicNoteGeneration(Frequency,Saptak):
     print "2).Teevra"
     selection = int(raw_input('Select:-'))
 
-    ab[4] = [env.Generate_Sound(Frequency,Saptak,7+selection,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[4] = int(f.next())
-    ind2[4] = int(f.next())
+    mp[4] = 7+selection
 
     #-----------------------------MaS----------------------------------
 
     print "\nChoose Shuddh Ma:-"
-    print "1).Shuddh Lower Pitch Madhyam"
+    print "1).Shuddh Madhyam"
     print "2).Ek Shruti Madhyam"
     selection = int(raw_input('Select:-'))
 
-    ab[5] = [env.Generate_Sound(Frequency,Saptak,9+selection,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[5] = int(f.next())
-    ind2[5] = int(f.next())
+    mp[5] = 9+selection
 
     #-----------------------------MaSh----------------------------------
 
     print "\nChoose Taar Ma:-"
-    print "1).Shuddh Madhyam"
-    print "2).Teevra Madhyam Higher Pitch"
+    print "1).Teevra Madhyam"
+    print "2).Teevratama Madhyam"
     selection = int(raw_input('Select:-'))
 
-    ab[6] = [env.Generate_Sound(Frequency,Saptak,11+selection,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[6] = int(f.next())
-    ind2[6] = int(f.next())
+    mp[6] = 11+selection
 
     #------------------------------P-----------------------------------
 
-    ab[7] = [env.Generate_Sound(Frequency,Saptak,14,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[7] = int(f.next())
-    ind2[7] = int(f.next())
+    mp[7] = 14
 
     #-----------------------------DhA-----------------------------------
 
@@ -205,10 +164,7 @@ def dynamicNoteGeneration(Frequency,Saptak):
     print "2).Komal"
     selection = int(raw_input('Select:-'))
 
-    ab[8] = [env.Generate_Sound(Frequency,Saptak,14+selection,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[8] = int(f.next())
-    ind2[8] = int(f.next())
+    mp[8] = 14+selection
 
     #------------------------------DhS-----------------------------------
 
@@ -217,10 +173,7 @@ def dynamicNoteGeneration(Frequency,Saptak):
     print "2).Teevra"
     selection = int(raw_input('Select:-'))
 
-    ab[9] = [env.Generate_Sound(Frequency,Saptak,16+selection,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[9] = int(f.next())
-    ind2[9] = int(f.next())
+    mp[9] = 16+selection
 
     #------------------------------NiA-----------------------------------
 
@@ -229,10 +182,7 @@ def dynamicNoteGeneration(Frequency,Saptak):
     print "2).Komal"
     selection = int(raw_input('Select:-'))
 
-    ab[10] = [env.Generate_Sound(Frequency,Saptak,18+selection,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[10] = int(f.next())
-    ind2[10] = int(f.next())
+    mp[10] = 18+selection
 
     #------------------------------NiS-----------------------------------
 
@@ -241,21 +191,34 @@ def dynamicNoteGeneration(Frequency,Saptak):
     print "2).Teevra"
     selection = int(raw_input('Select:-'))
 
-    ab[11] = [env.Generate_Sound(Frequency,Saptak,20+selection,NUM_SEC)]
-    f = open('temp.txt','r')
-    ind1[11] = int(f.next())
-    ind2[11] = int(f.next())
+    mp[11] = 20+selection
 
-    #------------------------------Sa2-----------------------------------
+    while Saptak != 4:
 
-    ab[12] = [env.Generate_Sound(Frequency,Saptak+1,1,NUM_SEC)]
+        # print str(counter) + "," + str(mp[(counter)%12]) + "," + str(counter%12) + "," + str(Saptak)
+
+        ab[counter] = [env.Generate_Sound(Frequency,Saptak,mp[counter%12],NUM_SEC)]
+        f = open('temp.txt','r')
+        ind1[counter] = int(f.next())
+        ind2[counter] = int(f.next())
+        f.close()
+
+        counter = counter + 1
+
+        if counter%12 == 0:
+            Saptak  = Saptak + 1
+    
+    # Mapping externally the last Sa of last Octave     
+    
+    ab[counter] = [env.Generate_Sound(Frequency,Saptak,mp[counter%12],NUM_SEC)]
     f = open('temp.txt','r')
-    ind1[12] = int(f.next())
-    ind2[12] = int(f.next())
+    ind1[counter] = int(f.next())
+    ind2[counter] = int(f.next())
+    f.close()
 
     return (ab, ind1, ind2)
 
-
+'''
 def saptak_selection():
 
     print "\nSelect your Saptak/Octave:-"
@@ -266,7 +229,8 @@ def saptak_selection():
     selection = int(raw_input('Select:-'))
 
     return selection
-
+'''
+'''
 def scale_selection():
 
     print "Select Scale:-"
@@ -285,7 +249,8 @@ def scale_selection():
     print "13).Exit"
     selection = int(raw_input('Select:-'))
     return selection
-
+'''
+'''
 def frequency_selection(Option3):
 
     f = 0
@@ -315,6 +280,7 @@ def frequency_selection(Option3):
     elif Option3==12:
         f=493.88
     return f
+'''
 
 def ringing(tone_dict, ind1, ind2, key): # Returns 3 parts of wave in form of Attack-Decay, Sustain and Release
     wave = np.array(tone_dict[key])
@@ -333,11 +299,13 @@ def ringing(tone_dict, ind1, ind2, key): # Returns 3 parts of wave in form of At
     return (ad, sust, rel)
 
 def handling(tone_dict, ind1, ind2):
-
+    
     tones = {}
-    mapping = {} # Doing mapping for Recording
+    # mapping = {} # Doing mapping for Recording in the file
     ret = {}
-
+    base_key = 36 # Mandra Saptak Sa key on MIDI Keyboard value
+    
+    '''
     mapping[0] = ' Sa '
     mapping[1] = ' ReK '
     mapping[2] = ' ReS '
@@ -351,6 +319,7 @@ def handling(tone_dict, ind1, ind2):
     mapping[10] = ' NiK '
     mapping[11] = ' NiS '
     mapping[12] = ' Sa2 '
+    '''
 
     # Creating Directory and file for Recording
 
@@ -362,36 +331,13 @@ def handling(tone_dict, ind1, ind2):
     # f = open('Record/Record_' + timestamp + '.txt', 'w')
 
     # Initializing Tone dictionary
-    for i in range(13):
+    for i in range(len(tone_dict)):
         tones[i] = {}
+        (tones[i][0], tones[i][1], tones[i][2]) = ringing(tone_dict, ind1, ind2, i)
 
-    (tones[0][0], tones[0][1], tones[0][2]) = ringing(tone_dict, ind1, ind2, 0)
-    (tones[2][0], tones[2][1], tones[2][2]) = ringing(tone_dict, ind1, ind2, 2)
-    (tones[4][0], tones[4][1], tones[4][2]) = ringing(tone_dict, ind1, ind2, 4)
-    (tones[5][0], tones[5][1], tones[5][2]) = ringing(tone_dict, ind1, ind2, 5)
-    (tones[7][0], tones[7][1], tones[7][2]) = ringing(tone_dict, ind1, ind2, 7)
-    (tones[9][0], tones[9][1], tones[9][2]) = ringing(tone_dict, ind1, ind2, 9)
-    (tones[11][0], tones[11][1], tones[11][2]) = ringing(tone_dict, ind1, ind2, 11)
-    (tones[12][0], tones[12][1], tones[12][2]) = ringing(tone_dict, ind1, ind2, 12)
-    (tones[1][0], tones[1][1], tones[1][2]) = ringing(tone_dict, ind1, ind2, 1)
-    (tones[3][0], tones[3][1], tones[3][2]) = ringing(tone_dict, ind1, ind2, 3)
-    (tones[6][0], tones[6][1], tones[6][2]) = ringing(tone_dict, ind1, ind2, 6)
-    (tones[8][0], tones[8][1], tones[8][2]) = ringing(tone_dict, ind1, ind2, 8)
-    (tones[10][0], tones[10][1], tones[10][2]) = ringing(tone_dict, ind1, ind2, 10)
 
-    ret['37'] = 0 # S
-    ret['39'] = 2 # D
-    ret['41'] = 4 # F
-    ret['42'] = 5 # G
-    ret['44'] = 7 # H
-    ret['46'] = 9 # J
-    ret['48'] = 11 # K
-    ret['49'] = 12 # L
-    ret['38'] = 1 # E
-    ret['40'] = 3 # R
-    ret['43'] = 6 # U
-    ret['45'] = 8 # I
-    ret['47'] = 10 # O
+    for i in range(len(tone_dict)):  
+        ret[str(base_key + i)] = i # S
 
     '''
     # Window initialization
@@ -423,11 +369,11 @@ def handling(tone_dict, ind1, ind2):
     screen.blit(background, (0,0))
     pygame.display.flip()
     '''
+
     def input(tones, ret):
         try:
             timeout = time.time() + 1 # See this in RaspberryPi
-            input_port = 'VMPK Output:VMPK Output 129:0' # Use "print mido.get_input_names()" to get input ports
-            with mido.open_input(input_port) as port:
+            with mido.open_input('Samson Carbon49:Samson Carbon49 MIDI 1 24:0') as port: # 'VMPK Output:VMPK Output 128:0' , 'Samson Carbon49:Samson Carbon49 MIDI 1 24:0', 'VMPK Output:VMPK Output 129:0'
 
                 while True:      # Flush out junk message
                     msg = port.receive(block=False)
@@ -436,13 +382,13 @@ def handling(tone_dict, ind1, ind2):
 
                 for message in port:
                     if str(message)[6] == 'n':
-
+                            
                         # f.write(mapping[ret[str(message)[24:26]]])
                         # play_maxtime(tones[ret[str(message)[23:25]]][0], 0) # Attack and Decay Part
                         play_maxtime(tones[ret[str(message)[23:25]]][1], -1) # Sustain Part
 
                     elif str(message)[6] == 'f':  # Release part during key release
-
+                        
                         # f.write("|") # Separator in Recording file
                         tones[ret[str(message)[24:26]]][1].stop() # Stop Play loop
                         # play_maxtime(tones[ret[str(message)[24:26]]][2], 0) # Release Part
@@ -453,7 +399,7 @@ def handling(tone_dict, ind1, ind2):
             print "\n Wrong Key... Try Again!"
             return 0
         return -1
-
+    
     while True:
         ret = input(tones, ret)
         if ret == 0:
@@ -465,7 +411,7 @@ def main():
 
     answer = 1
 
-    sample_rate, bit_rate, channels, buff = 22050, -16, 1, 512
+    sample_rate, bit_rate, channels, buff = 2*22050, -16, 1, 512
     pygame.mixer.pre_init(sample_rate, bit_rate, channels, buff)
 
     os.system('clear') # Clear screen for Linux. In Windows use 'cls' instead of 'clear'
@@ -473,14 +419,16 @@ def main():
     print "------------------------------------------------------"
     print "-------Welcome to 22 Shruti Synthesizer Program-------"
     print "------------------------------------------------------"
-
+    
+    '''
     res = scale_selection()
 
     if res == 13:
         answer = 2
     else:
         f = frequency_selection(res)
-
+    '''
+    
     while answer == 1:
 
         os.system('clear') # Clear screen for Linux. In Windows use 'cls' instead of 'clear'
@@ -490,36 +438,29 @@ def main():
         pygame.sndarray.use_arraytype('numpy')
 
         print "\nChoose from the options below:-"
-        print "1).Ati komal & Shuddh Notes"
+        print "1).Western Scale"
         print "2).Notes of your choice"
         print "3).Exit"
         selection = int(raw_input('Select:-'))
 
         if selection == 1:
 
-            selection_2 = saptak_selection()
-
-            if selection_2 >= 4 or selection_2 <= 0:
-                answer = 2
-            else:
-                (tone_dict, ind1, ind2) = defaultNoteGeneration(f,selection_2) # Left for ADSR
-                print "\nPlay!"
-
-                handling(tone_dict, ind1, ind2)
-                pygame.quit()
+            (tone_dict, ind1, ind2) = defaultNoteGeneration()
+            os.system('clear')
+            print "\nPlay!"
+            
+            handling(tone_dict, ind1, ind2)
+            pygame.quit()
 
         elif selection == 2:
+            
+            (tone_dict, ind1, ind2) = dynamicNoteGeneration()
+            os.system('clear')
+            print "\nPlay!"
 
-            selection_2 = saptak_selection()
+            handling(tone_dict, ind1, ind2)
+            pygame.quit()
 
-            if selection_2 >= 4 or selection_2 <=0:
-                answer = 2
-            else:
-                (tone_dict, ind1, ind2) = dynamicNoteGeneration(f,selection_2)
-                print "\nPlay!"
-
-                handling(tone_dict, ind1, ind2)
-                pygame.quit()
         else:
             answer = 2
 
