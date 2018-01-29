@@ -2,4 +2,4 @@
 - Developement in progress, however you can test the current version
 - The Code is MIDI based, thus you can use it with MIDI keyboard or Virtual MIDI events generater(E.g. VMPK)
 - Dependencies Needed : pyGame, MIDO Library, NumPy, Scikits Samplerate, Scikits Audiolab
-- Harmonium Note Courtesy : Prof. Srijan Deshpande[https://ahduni.edu.in/amsom/faculty/srijan-deshpande]
+- Harmonium Note Courtesy : [Prof. Srijan Deshpande](https://ahduni.edu.in/amsom/faculty/srijan-deshpande)
