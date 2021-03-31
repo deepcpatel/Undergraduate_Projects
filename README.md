@@ -22,7 +22,7 @@ In this project we have done analysis on the Traditional CPU Scheduling algorith
 Remaining Next(SRN), Round Robin(RR), Priority Scheduling(PS) as well as Real Time CPU Scheduling Algorithms like Rate Monotonic Scheduling(RMS) and Earliest Deadline First(EDF) algorithms. We analyzed and compared characteristics like Average Waiting Time, Average Turnaround Time, Throughput and Percentage of Deadlines Missed.
 <br><br>
 
-## 4). Delta Search Machine : Desktop File Search Engine [[Link]](https://github.com/deepcpatel/Undergraduate_Projects/tree/master/Delta_Search_Machine)
+## 4). Delta Search Machine: A Desktop File Search Engine [[Link]](https://github.com/deepcpatel/Undergraduate_Projects/tree/master/Delta_Search_Machine)
 **Members : Deep C. Patel, [Maunil Vyas](https://github.com/Maunil), [Shreyas Patel](https://github.com/shreyaspatel25), Jay Dangar**<br>
 **Course : Data Structures and Algorithms**<br>
 We made a desktop file searching using Java. We perform serch on the index of the files in the Desktop. For the indexing task, we utilized [inverted index](https://en.wikipedia.org/wiki/Inverted_index) data structure. Our Searching engine features GUI, Search History, Recommendations and Spell Corrections.
