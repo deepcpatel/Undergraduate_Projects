@@ -15,7 +15,7 @@ The usual electronic synthesizers use 12 notes in an octave. However, Indian cla
 In this project we tried to reproduce the paper titled ["A nonparametric approach for spectrum sensing using bootstrap techniques"](http://ieeexplore.ieee.org/document/7036915/).
 <br><br>
 
-## 3). Analysis of Traditional CPU Scheduling Algorithms and Real Time CPU Scheduling Algorithms [[Link]](https://github.com/deepcpatel/Undergraduate_Projects/tree/master/CPU_Scheduling_Algorithm_Analysis)
+## 3). Analysis of Traditional and Real Time CPU Scheduling Algorithms [[Link]](https://github.com/deepcpatel/Undergraduate_Projects/tree/master/CPU_Scheduling_Algorithm_Analysis)
 **Members : [Shreyas Patel](https://github.com/shreyaspatel25), Deep C. Patel, [Maunil Vyas](https://github.com/Maunil), Karan Patel**<br>
 **Course : Operating Systems**<br>
 In this project we have done analysis on the Traditional CPU Scheduling algorithms like First Come First Serve(FCFS), Shortest
